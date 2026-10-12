@@ -1,0 +1,36 @@
+{
+  "name": "@stream-arcade/cookies",
+  "version": "1.0.0",
+  "description": "The StreamArcade cookie banner as a React component, with the consent shared by every game.",
+  "type": "module",
+  "packageManager": "pnpm@12.6.0",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "default": "./dist/core.js"
+    },
+    "./cookies.css": "./dist/cookies.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node -e \"require('fs').copyFileSync('src/cookies.css','dist/cookies.css')\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "react": "^19.3.0",
+    "typescript": "~6.0.3"
+  }
+}
